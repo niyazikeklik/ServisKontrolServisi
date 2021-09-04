@@ -29,8 +29,6 @@ namespace mailServicee
             return true;
             
         }
-
-
         private bool KontrolString(string data, string configName)
         {
             if (string.IsNullOrEmpty(data))
@@ -58,7 +56,7 @@ namespace mailServicee
         }
 
 
-       AppSettings()
+        AppSettings()
         {
             if (KontrolString(ConfigurationManager.AppSettings["ServiceNames"], "ServiceNames"))
                 this.ServiceNames = ConfigurationManager.AppSettings["ServiceNames"]?.Split(';').ToList();
@@ -118,7 +116,6 @@ namespace mailServicee
         public string SmtpHost  { get; set; }
         public string JsonYolu { get; set; }
         public string SQLConnectionString { get; set; }
-
         public int SmtpPort {  get; set; }
         public bool IsLogCheckActive { get; set; }
     }
